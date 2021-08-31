@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Interview Bot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,13 +20,17 @@
 
   <div id="controls">
 
-    <button id="recordButton">Record</button>
-    <button id="pauseButton" disabled>Pause</button>
-    <button id="stopButton" disabled>Stop</button>
-    
+    <button class="btn btn-primary" id="recordButton">Record</button>
+    <button class="btn btn-primary" id="pauseButton" disabled>Pause</button>
+    <button class="btn btn-primary" id="stopButton" disabled>Stop</button>
+
   </div>
 
-  <p><strong>Answers:</strong></p>
+  <br>
+
+  <input type="text" placeholder="Enter Name Here" id="candidate_name" >
+
+  <p><strong id="recording_title"></strong></p>
 
   <ol id="recordingsList"></ol>
 
