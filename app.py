@@ -19,18 +19,6 @@ def index():
 
     questions_list = get_data()
 
-    if request.method == "POST":
-
-        f = request.files['audio_data']
-
-        with open(f'{AUDIO_OUTPUT_FOLDER}/audio.wav', 'wb') as audio:
-
-            f.save(audio)
-
-        print('file uploaded successfully')
-
-        return render_template('index.html')
-
     return render_template("index.html", questions = questions_list)
 
 @app.route("/upload", methods=['POST', 'GET'])
