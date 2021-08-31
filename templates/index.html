@@ -1,21 +1,38 @@
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Simple Recorder.js demo with record, stop and pause - addpipe.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-  </head>
-  <body>
 
-    <div id="controls">
-     <button id="recordButton">Record</button>
-     <button id="pauseButton" disabled>Pause</button>
-     <button id="stopButton" disabled>Stop</button>
-    </div>
-    <div style="visibility: hidden;" id="formats"></div>
-    <p><strong>Recordings:</strong></p>
-    <ol id="recordingsList"></ol>
-    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script src="./static/js/app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <p><strong>Questions:</strong></p>
+
+  {% for question in questions %}
+
+  <p>{{loop.index}}. {{question}}</p>
+
+  {% endfor %}
+
+  <div id="controls">
+
+    <button id="recordButton">Record</button>
+    <button id="pauseButton" disabled>Pause</button>
+    <button id="stopButton" disabled>Stop</button>
+    
+  </div>
+
+  <p><strong>Answers:</strong></p>
+
+  <ol id="recordingsList"></ol>
+
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  <script src="./static/js/app.js"></script>
+  <div style="visibility: hidden;" id="formats"></div>
+
+</body>
+
 </html>

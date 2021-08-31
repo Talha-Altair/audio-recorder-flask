@@ -140,7 +140,7 @@ function createDownloadLink(blob) {
     li.appendChild(document.createTextNode(filename + ".wav "))
 
     //add the save to disk link to li
-    li.appendChild(link);
+    // li.appendChild(link);
 
     //upload link
     var upload = document.createElement('a');
