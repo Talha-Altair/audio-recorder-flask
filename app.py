@@ -42,7 +42,11 @@ def upload():
 
         f = request.files['audio_data']
 
-        with open(f'{AUDIO_OUTPUT_FOLDER}/audio.wav', 'wb') as audio:
+        name = request.values.get("name")
+
+        print(name)
+
+        with open(f'{AUDIO_OUTPUT_FOLDER}/{name}.wav', 'wb') as audio:
 
             f.save(audio)
 

@@ -144,6 +144,7 @@ function createDownloadLink(blob) {
 
     //upload link
     var name  = document.getElementById("candidate_name")
+    // console.log(name)
     var upload = document.createElement('a');
     upload.href = "#";
     upload.innerHTML = "Upload";
@@ -151,12 +152,12 @@ function createDownloadLink(blob) {
         var xhr = new XMLHttpRequest();
         xhr.onload = function (e) {
             if (this.readyState === 4) {
-                console.log("Server returned: ", e.target.responseText);
+                // console.log("Server returned: ", e.target.responseText);
             }
         };
         var fd = new FormData();
         fd.append("audio_data", blob, filename);
-        fd.append("name",name)
+        fd.append("name",name.value)
         xhr.open("POST", "/upload", true);
         xhr.send(fd);
     })
