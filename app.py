@@ -1,9 +1,12 @@
 from flask import *
+import pandas as pd
 import os
 
 app = Flask(__name__)
 
 AUDIO_OUTPUT_FOLDER = 'static/audio'
+
+df = pd.read_csv('questions.csv')
 
 @app.route("/", methods=['POST', 'GET'])
 def index():
@@ -15,7 +18,11 @@ def index():
         print('file uploaded successfully')
         return render_template('index.html', request="POST")
 
-    return render_template("index.html")
+    questions_list = df.questions.to_list()
+
+    print(questions_list,type(questions_list))
+
+    return render_template("index.html", questions = questions_list)
 
 if __name__ == "__main__":
     app.run(debug=True)
